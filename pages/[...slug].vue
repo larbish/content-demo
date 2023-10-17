@@ -1,11 +1,11 @@
 <template>
   <UPage>
-    <!-- <UPageHeader :title="page.title" :description="page.description" /> -->
-    <!-- <template #left>
+    <UPageHeader :title="page.title" :description="page.description" />
+    <template #left>
       <UAside>
         <UNavigationTree :links="mapContentNavigation(navigation)" />
       </UAside>
-    </template> -->
+    </template>
     <UPageBody prose>
       <ContentRenderer v-if="page.body" :value="page" />
     </UPageBody>
@@ -20,5 +20,5 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-// const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
 </script>
